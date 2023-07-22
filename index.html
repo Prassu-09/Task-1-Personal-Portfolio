@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Prasanna's Personal Site</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/bd6125c71b.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+  <div id="header">
+      <div class="container">
+        <nav>
+          <img src="images/logo.png" class="logo">
+
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#Project">Project</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+
+        <div class="header-text">
+          <p>Web Development Intern</p>
+          <h1>Hi, I'm <span>Prasanna</span></h1>
+       </div>
+       <span id="element"></span>
+         <div class="buttons">
+           <a href="images/Resume.pdf" download class="btn">Download CV</a>
+         </div>
+     </div>
+
+   </div>
+
+   <div id="about">
+     <div class="Container">
+       <div class="row">
+          <div class="about-col-1">
+             <img src="images/image.jpg">
+           </div>
+          <div class="about-col-2">
+              <h1 class="sub-title">About Me</h1>
+
+                 <p>My name is Prasanna, Iam from Ongole.
+                   I am a graduate student at R.V.R. & J.C. College of Engineering<br> and
+                    currently as an Intern at <a href="https://technohacks.co.in/">TechnoHacks EduTech</a>.
+                    My interests include Design and Verification.</p>
+
+                    <div class="tab-titles">
+                      <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                      <p class="tab-links" onclick="opentab('Eduaction')">Education</p>
+                      <p class="tab-links" onclick="opentab('Project')">Project</p>
+                   </div>
+                   <div class="tab-contents active-tab" id="Skills">
+                     <ul>
+                       <li>Python</li>
+                       <li>C Programming</li>
+                       <li>Html</li>
+                       <li>Microsoft Office</li>
+                    </ul>
+                  </div>
+                  <div class="tab-contents" id="Eduaction">
+                    <ul>
+                      <li><span>2020-2023</span><br>Graduation at <a href="http://www.rvrjcce.ac.in/">R.V.R. & J.C. College of Engineering</a>
+                        with 8.4 cgpa</li>
+                      <li><span>2017-2020</span><br>Dilpoma at A.A.N.M & V.V.R.S.R Polytechnic with 96.58%</li>
+                      <li><span>2017</span><br>SSC at Bhashyam E.M. High School with 9.8cgpa</li>
+                   </ul>
+                 </div>
+                 <div class="tab-contents" id="Project">
+                   <ul>
+                     <li><h2><span>Compact QuadBand Slotted Patch Antenna</span></h2><br>
+
+                        <p>This work presents a quadband antenna, which is compact, low profile, and covers the bandwidth requirements for Bluetooth,
+                        C-band, WLAN and WiMAX applications.</p>
+                       <p>In this project, we designed the microstrip patch antenna with different type of slots to get good impedance matching
+                          over quad bands to support WLAN and WiMAX applications. The proposed design simulated in CST (computer simulation technology)
+                          software.The results will be represented in terms of reflection coefficient, radiation pattern, input impedance, bandwidth and
+                          gain. We worked on this type of antenna to get resonate in quad bands that are, 2.3 to 2.46 GHz, 288 to 3.72 GHz, and 4.3 to
+                          4.43 and 5 to 8 GHz with |S11| < -10 dB within these operating bands.</p>
+                      <p>For detailed information about my project please
+                          checkout this paper <a href="https://jetir.org/papers/JETIR2304684.pdf">Compact QuadBand Slotted Patch Antenna</a>
+                          which is published on JETIR</li></p>
+                  </ul>
+                </div>
+          </div>
+       </div>
+    </div>
+  </div>
+<!---contact---->
+<div id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="contact-left">
+          <h1 class="sub-title">Contact Me</h1>
+          <p><i class="fa-solid fa-at"></i>prasannalakshmi2604@gmail.com</p>
+          <p><i class="fa-solid fa-square-phone"></i>8185997142</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/prasanna-g-32317225a"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com/_prasanna_prassu_"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+      </div>
+
+      <div class="contact-right">
+        <form name="submit-to-google-sheet">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
+          <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+          <button type="submit" class="btn btn2">Submit</button>
+        </form>
+        <span id="msg"></span>
+      </div>
+    </div>
+  </div>
+  <div class="Copyright">
+    <p>Copyright <i class="fa-regular fa-copyright"></i>; prasannaportfolio.com | All rights reserved</p>
+  </div>
+</div>
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+      for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+      }
+      for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+
+    }
+
+</script>
+<script>
+ var sidemenu = document.getElementById("sidemenu");
+
+ function openmenu(){
+   sidemenu.style.right = "0";
+ }
+ function closemenu(){
+   sidemenu.style.right = "-200px";
+ }
+</script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwu_NXw-sCAC3b_Vrd592sxaI0sEdFdAgTjblFcm99LpUt2uTkeS2aWEgLYYabx9WAF/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Message sent successfully"
+        setTimeout(function(){
+          msg.innerHTML = ""
+       },5000)
+       form.reset()
+    })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
